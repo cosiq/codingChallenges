@@ -17,6 +17,7 @@ def cyclicRotation(A, K):
 	return A[n-K:] + A[:n-K]
 
 
-
-
 cyclicRotation([3, 8, 9, 7, 6], 3) # [9, 7, 6, 3, 8]
+
+# Time: O(1)
+# Space: O(N + K)

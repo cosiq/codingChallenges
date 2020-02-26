@@ -11,4 +11,4 @@ def brackets(S):
         if ch in paren.values():
             if len(queue) == 0 or ch != queue[-1]: return 0
             elif ch == queue[-1]: queue.pop()
-    return int(len(queue) == 0)    
+    return len(queue) == 0

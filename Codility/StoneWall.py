@@ -20,6 +20,6 @@ def solution(H):
         while len(stack) != 0 and h < stack[-1]:
             stack.pop()
             cnt += 1
-        if len(stack) == 0 or h > stack[-1]: stack.append(height)
+        if len(stack) == 0 or h > stack[-1]: stack.append(h)
     cnt += len(stack)
     return cnt

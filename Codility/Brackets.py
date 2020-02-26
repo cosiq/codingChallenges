@@ -3,11 +3,14 @@
 # For example, given S = "{[()()]}", the function 
 # should return 1 and given S = "([)()]", the function should return 0, as explained above.
 
+
 def brackets(S):
-	paren, queue = {"{":"}", "[":"]", "(": ")"}, []
+
+	paren, stack = {"{":"}", "[":"]", "(": ")"}, []
     for ch in S:
-        if ch in paren.keys(): queue.append(paren[ch])
+        if ch in paren.keys(): stack.append(paren[ch])
         if ch in paren.values():
-            if len(queue) == 0 or ch != queue[-1]: return 0
-            elif ch == queue[-1]: queue.pop()
-    return len(queue) == 0
+            if len(stack) == 0 or ch != stack[-1]: return 0
+            elif ch == stack[-1]: stack.pop()
+    return len(stack) == 0
+

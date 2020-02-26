@@ -14,12 +14,13 @@
 #   H[5] = 8    H[6] = 7    H[7] = 4    H[8] = 8
 # the function should return 7. The figure shows one possible arrangement of seven blocks.
 
-def solution(H):
+
+def stoneWall(H):
     stack, cnt = [], 0
-    for h in H:
-        while len(stack) != 0 and h < stack[-1]:
+    for i in range(len(H)):
+        while len(stack) and H[i] < stack[-1]:
             stack.pop()
+        if not len(stack) or H[i] > stack[-1]: 
+            stack.append(H[i])
             cnt += 1
-        if len(stack) == 0 or h > stack[-1]: stack.append(h)
-    cnt += len(stack)
     return cnt

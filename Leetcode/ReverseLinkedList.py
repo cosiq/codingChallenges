@@ -8,7 +8,6 @@ class ListNode:
 		self.val = x
 		self.next = None
 
-
 def recReverseList(head: ListNode):
 	if head is None or head.next is None: return head
 	res = recReverseList(head.next)

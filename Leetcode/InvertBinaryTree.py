@@ -21,8 +21,9 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 def recInvertTree(root: TreeNode):
-	if root: root.left, root.right = invertTree(root.right), invertTree(root.left)
+	if root: root.left, root.right = recInvertTree(root.right), recInvertTree(root.left)
 	return root
 
 # Time: O(N)

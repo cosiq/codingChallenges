@@ -14,6 +14,10 @@ def numSquares(n: int):
 		lst.append(1 + min(lst[i - j * j] for j in range(int(i ** .5), 0, -1)))
 	return lst[n]
 
+# Time: O(N)
+# Space: O(N)
+
 
 numSquares(12) # 3
 numSquares(13) # 2
+

@@ -20,7 +20,7 @@ def maxDepth(root: TreeNode):
 	return max(maxDepth(root.left), maxDepth(root.right)) + 1 if root else 0
 
 # Time: O(N)
-# Space: O(1)
+# Space: O(N)
 
 def dfsMaxDepth(root: TreeNode):
 	stack, res = [(root, 1)], 0
@@ -41,4 +41,4 @@ def dfsMaxDepth(root: TreeNode):
 	return max(left, right) + 1
 
 # Time: O(N)
-# Space: O(1)
+# Space: O(N)

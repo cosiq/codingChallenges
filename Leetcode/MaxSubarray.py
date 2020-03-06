@@ -7,7 +7,6 @@
 #	 Explanation: [4,-1,2,1] has the largest sum = 6.
 
 def maxSubArray(nums: List[int]):
-	
 	localMax, globalMax = nums[0], nums[0]
     for i in range(1, len(nums)):
         localMax = max(nums[i], localMax + nums[i])

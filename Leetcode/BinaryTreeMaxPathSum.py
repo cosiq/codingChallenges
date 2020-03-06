@@ -27,7 +27,6 @@ class TreeNode:
 
 class Solution:
     def maxPathSum(self, root: TreeNode) -> int:
-
         self.maxSum = float("-inf")
         
         def helper(root):
@@ -41,6 +40,3 @@ class Solution:
 
 # Time: O(N)
 # Space: O(N)
-
-
-

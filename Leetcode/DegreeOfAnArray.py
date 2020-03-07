@@ -23,3 +23,25 @@ def shortestSubArray(nums):
 
 # Time: O(N)
 # Space: O(N)
+
+
+def findShortestSubArray(nums):
+    if nums == []: return 0
+    cmp = {}
+    for n in nums:
+        if n not in cmp: cmp[n] = 1
+        else: cmp[n] += 1
+    degree = max(cmp.values())
+    if degree == 1: return 1
+    else:
+        minLength = len(nums)
+        for keys in cmp:
+            if cmp[keys] == degree:
+                pos1 = nums.index(keys)
+                pos2 = len(nums) - nums[::-1].index(keys) - 1
+                if pos2 - pos1 + 1 < minLength:
+                    min_length = pos2 - pos1 + 1
+    return minLength
+    
+# Time: O(N)
+# Space: O(N)

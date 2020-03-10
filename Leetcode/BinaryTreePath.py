@@ -15,16 +15,16 @@ class TreeNode:
         self.left = None
         self.right = None
 
-def recBinaryTreePath(root):
+def recBinaryTreePaths(root):
 	if not root: return []
 	if not (root.left or root.right): return [str(root.val)]
-	return ([str(root.val) + "->" + item for item in recBinaryTreePath(root.left)]
-	 + [str(root.val) + "->" + jtem for jtem in recBinaryTreePath(root.right)])
+	return ([str(root.val) + "->" + item for item in recBinaryTreePaths(root.left)]
+	 + [str(root.val) + "->" + jtem for jtem in recBinaryTreePaths(root.right)])
 
 # Time: O(N)
 # Space: O(N)
 
-def BinaryTreePath(root):
+def BinaryTreePaths(root):
     if not root: return []
     res, stack = [], [(root, "")]
     while stack:

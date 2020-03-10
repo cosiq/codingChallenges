@@ -15,7 +15,7 @@
 def maxProfit(prices):
 	act, cooldown, hold = 0, float('-inf'), float('-inf')
     for p in prices:
-        hold, act, cooldown = max(hold, act - p), max(act, cooldown), hold
+        hold, act, cooldown = max(hold, act - p), max(act, cooldown), hold + p
     return max(act, cooldown)
 
 # Time: O(N)

@@ -7,15 +7,19 @@ class ListNode:
 
 	def getIntersectionNode(self, headA, headB):
 		if not (headA and headB): return None
-        currA, currB = headA, headB
-        is_secondA, is_secondB = 0, 0
-        while(currA != currB):
-            if not (is_secondA or currA.next):
-                is_secondA = 1
-                currA = headB
-            else: currA = currA.next
-            if not (is_secondB or currB.next):
-                is_secondB = 1
-                currB = headA
-            else: currB = currB.next
-        return currA
+        p1, p2, s1, s2 = headA, headB, 0, 0
+        while(p1 != p2):
+            if not (s1 or p1.next): s1, p1 = 1, headB
+            else: p1 = p1.next
+            if not (s2 or p2.next): s2, p2 = 1, headA
+            else: p2 = p2.next
+        return p1
+
+    def anotherGetIntersection(self, headA, headB):
+    	cache = set()
+        while headA:
+            cache.add(headA)
+            headA = headA.next
+        while headB:
+            if headB in cache: return headB
+            headB = headB.next

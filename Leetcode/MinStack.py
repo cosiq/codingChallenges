@@ -33,7 +33,7 @@ class MinStack:
 				self.min[-1][1] -= 1
 				if self.min[-1][1] == 0: self.min.pop()
 			return item
-		return None
+		else: return None
 
     def top(self): return self.arr[-1] if self.arr else None
     def getMin(self): return self.min[-1][0] if self.min else None

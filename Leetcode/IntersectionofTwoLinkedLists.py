@@ -16,10 +16,10 @@ class ListNode:
         return p1
 
     def anotherGetIntersection(self, headA, headB):
-    	cache = set()
+    	lst = set()
         while headA:
-            cache.add(headA)
+            lst.add(headA)
             headA = headA.next
         while headB:
-            if headB in cache: return headB
+            if headB in lst: return headB
             headB = headB.next
